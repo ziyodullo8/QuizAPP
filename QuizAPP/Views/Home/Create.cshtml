@@ -1,0 +1,42 @@
+﻿@model QuizModels
+<html>
+<head>
+    <title>Savol va Javob</title>
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div align="center" style="margin-bottom: 500px;" class="container">
+        <form class="needs-validation" asp-action="Create" asp-controller="Home" method="post">
+            <div>
+                <label for="savol" class="form-label">Savolingiz nima?</label>
+                <span asp-validation-for="Savol" class="text-danger"></span>
+                <input asp-for="Savol" type="text" class="form-control bor" />
+            </div>
+            <label>Javoblar:</label><br>
+            <div>
+                <label for="javob-a">1</label>
+                <span asp-validation-for="Javob1" class="text-danger"></span>
+                <input asp-for="Javob1" type="text" class="form-control placeholder="A javobi"><br><br>
+            </div>
+            <div>
+                <label for="javob-b">2</label><br><br>
+                <span asp-validation-for="Javob2" class="text-danger"></span>
+                <input asp-for="Javob2" type="text" class="form-control placeholder=" B javobi"><br><br>
+            </div>
+            <div>
+                <label for="javob-b">To'gri javob'</label><br><br>
+                <span asp-validation-for="Tugri_Javob" class="text-danger"></span>
+                <input asp-for="Tugri_Javob" type="text" class="form-control placeholder=" B javobi"><br><br>
+            </div>
+
+            <input value="Create" type="submit" class="btn btn-primary" />
+
+            <a class="btn btn-primary" href="/home/quizlist"> Boshlash</a>
+        </form>
+    </div>
+</body>
+</html>

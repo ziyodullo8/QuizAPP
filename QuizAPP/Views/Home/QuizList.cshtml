@@ -1,0 +1,61 @@
+﻿
+@model List<QuizModels>
+<html>
+<head>
+	<title>Savol va Javob</title>
+	<style>
+		label {
+			font-weight: bold;
+		}
+
+		input[type="radio"] {
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		@using (Html.BeginForm()) 
+		{
+				@foreach (QuizModels quiz in Model)
+			{
+			@*	<tr>
+					<td>
+						@Html.DisplayFor(modelquiz=>quiz.id) @Html.DisplayFor(modelquiz=> quiz.Savol) 
+					</td>
+					<td>
+						<input type="radio" id="javob1" name="@Html.DisplayFor(modelquiz=> quiz.Javob1)" class="rb" />
+						<input type="radio" id="javob2" name="@Html.DisplayFor(modelquiz=>quiz.Javob2)" class="rb" /><br>
+					</td>
+				</tr>*@
+
+				  <div class="alert alert-primary" style="height: 130px; margin:60px" role="alert">
+					    <h2>@Html.DisplayFor(modelquiz=>quiz.id) @Html.DisplayFor(modelquiz=> quiz.Savol)</h2>
+						<input type="radio" name="RAdio1" value="true" >A)
+					    <label for=""> name="@Html.DisplayFor(modelquiz=>quiz.Javob1)" </label><br>
+				    	<input type="radio" name="@Html.DisplayFor(modelquiz=>quiz.Javob2)" value="true">B)
+						<label for=""> @quiz.Javob2</label><br><hr>
+				   </div>				
+			}
+		}
+	</div>
+	<a class="btn btn-primary" href="/home/natija"> Tugatish</a>
+</body>
+</html>
+	@*<h2>@quiz.id) @quiz.Savol</h2>
+				<input type="radio">A)
+				<label for=""> @quiz.Javob1</label><br>
+				<input type="radio">B)
+				<label for=""> @quiz.Javob2</label><br><hr>*@
+
+				@*   <div>
+						   <h2>@quiz.id) @quiz.Savol</h2>
+					   <div> 
+						 @Html.RadioButton("answer", "A", new { id = "radio_A" }) 
+						  A) @Html.Label("radio_A", quiz.Javob1) 
+					   </div> 
+					   <div> 
+						 @Html.RadioButton("answer", "B", new { id = "radio_B" }) 
+						 B) @Html.Label("radio_B", quiz.Javob2) <hr>
+					  </div> 
+				   </div>*@

@@ -1,0 +1,32 @@
+﻿@model List<QuizModels>
+<html>
+<head>
+	<title>Savol va Javob</title>
+	<style>
+		label {
+			font-weight: bold;
+		}
+
+		input[type="radio"] {
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	@foreach (QuizModels quiz in Model)
+	{
+		<div class="alert alert-primary" style="height: 130px; margin:50px" role="alert">
+			<h2>@quiz.id) @quiz.Savol</h2>
+			<input type="radio">A)
+			<label for=""> @quiz.Javob1</label><br>
+			<input type="radio">B)
+			<label for=""> @quiz.Javob2</label><br><hr>
+		</div>
+		<div style="float:right">
+			<a class="btn btn-danger" href="/home/delete/@quiz.id">Delete</a>
+			<a class="btn btn-success" href="/home/edit/@quiz.id">Edit</a>
+		</div>
+	}
+	<a class="btn btn-primary" href="/home/natija"> Natija</a>
+</body>
+</html>
